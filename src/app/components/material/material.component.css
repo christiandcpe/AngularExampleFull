@@ -1,0 +1,26 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 50%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  table {
+    width: 90%;
+  }
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://www.e-quipu.pe/dinamic/equipo/232x232/croppedImg_cSHMdA3MsP.png');
+    background-size: cover;
+
+  }
+  .card-list{
+    margin: 10px;
+    background-color: rgb(247, 244, 244);
+  }

@@ -1,0 +1,55 @@
+<div class="container" style="margin-left: 50px; margin-right: 50px;">
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Codigo</mat-label>
+    <input matInput placeholder="Codigo"  #codigo="ngModel" [(ngModel)]="deposito.codigo" name="codigo">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Descripción</mat-label>
+    <input matInput placeholder="Descripción"  #descripcion="ngModel" [(ngModel)]="deposito.descripcion" name="descripcion" >
+  </mat-form-field>
+
+  <div *ngIf="!edit">
+      <button mat-raised-button color="primary" (click)="addDeposito(deposito)">Guardar</button>
+      <button  mat-raised-button color="acceny" (click)="reset()">Reset</button>
+  </div>
+  <div *ngIf="edit">
+      <button  mat-raised-button color="primary" (click)="updateDeposito(deposito)">Actualizar</button>
+      <button  mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+  </div>
+  
+ 
+</form>
+</div>
+
+<div class="container" style="margin-left: 50px; margin-right: 50px;">
+  <mat-grid-list cols="4" rowHeight="1.2:1.1" >
+    <mat-grid-tile *ngFor="let depo of depositos">
+      <mat-card class="example-card" class="card-list">   
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>IEEE UTP SC</mat-card-title>
+            <mat-card-subtitle>Angular 9</mat-card-subtitle>
+            <div style="float: right;">
+            <button mat-raised-button color="warn" (click)="deleteDeposito(depo.id)"><mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></button>
+            </div>                
+          </mat-card-header>      
+          <mat-card-content>
+            <p style="margin: 10px;"> 
+              Código : {{depo.codigo}} <br>
+              Descripción: {{depo.descripcion}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions style="margin: 5px;">
+            <button (click)="likeDeposito(depo)"  mat-raised-button color="primary">
+              <span *ngIf="depo.likes == 0">LIKE</span>
+              <span *ngIf="depo.likes > 0">{{depo.likes}} LIKES</span>
+            </button>
+            <button (click)="getOneDeposito(depo.id)"  mat-button>EDITAR</button>
+          </mat-card-actions>
+        </mat-card>        
+    </mat-grid-tile> 
+  </mat-grid-list>
+</div>
+
+

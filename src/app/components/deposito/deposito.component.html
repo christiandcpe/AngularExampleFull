@@ -1,0 +1,71 @@
+<p>deposito works!</p>
+<h5>Estoy en el componente Deposito</h5>
+
+<span>Para ir al componente Usuario dar click <button class="btn btn-danger" (click)="goToUsuarioComponet()" >Aqui</button></span>
+
+<div class="container">
+
+    <!--form class="form-inline" #formDeposito="ngForm" (ngSubmit)="addDeposito(deposito)">
+        <div class="form-group mb-2">
+  
+          <input type="number" #codigo="ngModel" [(ngModel)]="deposito.codigo" name="codigo"  class="form-control"  placeholder="Codigo" >
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+
+          <input type="text" #descripcion="ngModel" [(ngModel)]="deposito.descripcion" name="descripcion" class="form-control" placeholder="Descripcion">
+        </div>
+        
+        <button type="submit" class="btn btn-primary mb-2">Guardar</button>
+       
+    </form-->
+    <form class="form-inline" >
+        <div class="form-group mb-2">
+  
+          <input type="number" #codigo="ngModel" [(ngModel)]="deposito.codigo" name="codigo"  class="form-control"  placeholder="Codigo" >
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+
+          <input type="text" #descripcion="ngModel" [(ngModel)]="deposito.descripcion" name="descripcion" class="form-control" placeholder="Descripcion">
+        </div>
+        <div *ngIf="!edit">
+            <button  class="btn btn-primary mb-2" (click)="addDeposito(deposito)">Guardar</button>
+            <button  class="btn btn-warning mb-2" (click)="reset()">Reset</button>
+        </div>
+        <div *ngIf="edit">
+            <button  class="btn btn-primary mb-2" (click)="updateDeposito(deposito)">Actualizar</button>
+            <button  class="btn btn-danger mb-2" (click)="cancelar()">Cancelar</button>
+        </div>
+        
+       
+    </form>
+
+
+    <div class="form-group mb-2" >    
+        <label *ngIf="!edit" for="staticEmail2">Se registrará: </label>   
+        <label *ngIf="edit" for="staticEmail2">Se Actualizará: </label>        
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="{{deposito.codigo}}">
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="{{deposito.descripcion}}">
+ 
+    </div>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col" colspan="2"><span style="text-align: center !important;">Acciones</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let depo of depositos">
+            <th scope="row">{{depo.id}}</th>
+            <td>{{depo.codigo}}</td>
+            <td>{{depo.descripcion}}</td> 
+            <td><button (click)="getOneDeposito(depo.id)" class="btn btn-success">Editar</button></td>
+            <td><button (click)="deleteDeposito(depo.id)" class="btn btn-danger">Eliminar</button></td>
+          </tr>
+        
+        </tbody>
+      </table>
+</div>

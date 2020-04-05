@@ -1,0 +1,42 @@
+<p>usuario works!</p>
+
+<p *ngIf="user">
+    Parametro de la url: {{parametro}} <br>
+    Datos obtenidos por el Parametro: <br>
+    ID: {{user.id}} <br>
+    Nombre: {{user.nombre}} <br>
+    Apellidos: {{user.apellidos}} <br>
+    Edad: {{user.edad}} <br>
+    Email: {{user.email}} <br>
+    Sexo: {{user.sexo}} <br>
+</p>
+
+
+<pre>{{usuario.id}} {{usuario.nombre}} {{usuario.apellidos}} {{usuario.edad}} {{usuario.email}}</pre>
+<div class="container">
+    <input type="text" [(ngModel)]="color" >
+
+    <div [ngStyle]="{
+        'background-color': color,
+        'width': '200px',
+        'color': 'white'
+    }">
+    {{color}}
+    </div>
+</div>
+<pre>
+    <ul *ngFor="let us of usuarios" class="row">
+        <li class="col-6">{{us.id}}</li>
+        <li>{{us.nombre}}</li>
+        <li>{{us.apellidos}}</li>
+        <li>{{us.edad}}</li>
+        <li>{{us.email}}</li>
+        <li *ngIf="us.sexo == 'mas'">Masculino</li>
+        <li *ngIf="us.sexo == 'fem'">Femenino</li> 
+        <li><a [routerLink]="['/usuarios', us.id]">Detalles</a></li>      
+        <li><button (click)="detallesUser(us.id)">Evento ROUTER</button></li>
+    </ul>
+</pre>
+
+
+
