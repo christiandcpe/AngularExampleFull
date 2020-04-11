@@ -1,5 +1,6 @@
 <p>usuario works!</p>
 
+
 <p *ngIf="user">
     Parametro de la url: {{parametro}} <br>
     Datos obtenidos por el Parametro: <br>
@@ -24,6 +25,8 @@
     {{color}}
     </div>
 </div>
+
+<button (click)="logout()">Cerrar Sesion</button>
 <pre>
     <ul *ngFor="let us of usuarios" class="row">
         <li class="col-6">{{us.id}}</li>

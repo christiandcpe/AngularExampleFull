@@ -12,7 +12,7 @@ export class UsuarioComponent implements OnInit {
 
   usuario: Usuario
   usuarios: Array<Usuario>
-  color = 'blue'
+  color = 'green'
   parametro;
   public user;
 
@@ -30,6 +30,7 @@ export class UsuarioComponent implements OnInit {
    }
 
   ngOnInit() {
+    
     this.usuario = new Usuario(1,'Diego Antonio', 'Quiroz Ramirez', 26, 'ignquirozramirez@gmail.com','mas')
     console.log(this.usuario) 
 
@@ -38,6 +39,11 @@ export class UsuarioComponent implements OnInit {
       /* this.user = this.usuarios.find(v => v.id == this.parametro)
       console.log("este es el resultado ",this.user) */
     })
+    const tokenSession = sessionStorage.getItem('token')
+    const token = (localStorage.getItem('token'))
+    if(!tokenSession){
+      this._router.navigate(['/'])
+    }
   }
 
   detallesUser(id){
@@ -56,5 +62,10 @@ export class UsuarioComponent implements OnInit {
         console.log("la navegacion no fue exitosa => ", err)
       }
     )
+  }
+
+  logout = () => {
+    sessionStorage.removeItem('token')
+    this._router.navigate(['/'])
   }
 }

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 import { Deposito } from '../models/Deposito';
+import { baseUrl } from '../../constants/constants'
 
 
 @Injectable({
@@ -12,7 +13,7 @@ export class DepositoService {
 
   
 
-  baseUrl = 'https://djangorestframework.pythonanywhere.com/deposito'
+  baseUrl = baseUrl+'/deposito'; 
   headers = new HttpHeaders({
     "Content-Type": "application/json",
     "Authorization": "Basic YWRtaW46SGlDaWZyYW9zXzI1MjI="
