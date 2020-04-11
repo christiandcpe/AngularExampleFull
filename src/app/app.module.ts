@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {FormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,9 @@ import { MaterialComponent } from './components/material/material.component';
 import { LoginComponent } from './components/login/login.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { YoutubeComponent } from './components/youtube/youtube.component';
+import { MapsComponent } from './components/maps/maps.component'
+import { GoogleMapsModule } from '@angular/google-maps'
+
 
 
 
@@ -22,7 +25,8 @@ import { YoutubeComponent } from './components/youtube/youtube.component';
     DepositoComponent,
     MaterialComponent,
     LoginComponent,
-    YoutubeComponent,
+    YoutubeComponent,   
+    MapsComponent
 
   ],
   imports: [
@@ -32,7 +36,11 @@ import { YoutubeComponent } from './components/youtube/youtube.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    GoogleMapsModule,
+  /* AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAFUaNL3hMGypEXuKqpJWDHWzFJXaceB80'
+    })*/
   ],
   providers: [],
   bootstrap: [AppComponent]

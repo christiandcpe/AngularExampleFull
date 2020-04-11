@@ -4,7 +4,8 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { DepositoComponent } from './components/deposito/deposito.component';
 import { MaterialComponent } from './components/material/material.component';
 import { LoginComponent } from './components/login/login.component';
-import { YoutubeComponent } from './components/youtube/youtube.component'
+import { YoutubeComponent } from './components/youtube/youtube.component';
+import { MapsComponent } from './components/maps/maps.component'
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
     component: MaterialComponent
   },
   {path : '', component: LoginComponent},
-  {path: 'youtube', component: YoutubeComponent}
+  {path: 'youtube', component: YoutubeComponent},
+  {path: 'maps', component: MapsComponent}
 ];
 
 @NgModule({
