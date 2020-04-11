@@ -9,7 +9,8 @@ import { Deposito } from './models/Deposito'
 })
 export class AppComponent {
   /** variable */
-  title = 'Taller'; 
+  title = 'Taller v2'; 
+promesa = 'Promesa 1'
   mi_nombre = 'Diego Quiroz Ramirez'
   slogan = 'IEEE UTP SC'
   edad: Number

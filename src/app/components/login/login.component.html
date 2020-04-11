@@ -1,0 +1,27 @@
+<div style="justify-content: center; align-items: center; margin-top: 150px; margin-left: 400px;">
+    <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" >
+
+        <mat-card class="box">
+          <mat-card-header class="mat-card-header">
+            <mat-card-title class="mat-card-title">Inicio de Sesión</mat-card-title>
+          </mat-card-header >
+      
+          <form class="example-form">
+            <mat-card-content>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email" name="username" [(ngModel)]="username" type="{{typeText.text}}">
+              </mat-form-field>
+      
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Contraseña" name="password" [(ngModel)]="password" type="{{typeText.password}}">
+              </mat-form-field>
+            </mat-card-content>
+            <button class="btn-block"  (click)="changePass(diablePass)" mat-stroked-button color="accent" >Ver</button>
+           
+            <button mat-stroked-button color="accent" (click)="login()" class="btn-block">INGRESAR</button>
+          </form>
+        </mat-card>
+
+      </div>
+
+</div>

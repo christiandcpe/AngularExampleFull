@@ -8,7 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DepositoComponent } from './components/deposito/deposito.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-import { MaterialComponent } from './components/material/material.component'
+import { MaterialComponent } from './components/material/material.component';
+import { LoginComponent } from './components/login/login.component'
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { MaterialComponent } from './components/material/material.component'
     UsuarioComponent,
     DepositoComponent,
     MaterialComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
