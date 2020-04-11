@@ -12,8 +12,8 @@ import { MaterialComponent } from './components/material/material.component';
 import { LoginComponent } from './components/login/login.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { YoutubeComponent } from './components/youtube/youtube.component';
-import { MapsComponent } from './components/maps/maps.component'
-import { GoogleMapsModule } from '@angular/google-maps'
+
+//import { GoogleMapsModule } from '@angular/google-maps'
 
 
 
@@ -26,7 +26,7 @@ import { GoogleMapsModule } from '@angular/google-maps'
     MaterialComponent,
     LoginComponent,
     YoutubeComponent,   
-    MapsComponent
+ 
 
   ],
   imports: [
@@ -37,7 +37,7 @@ import { GoogleMapsModule } from '@angular/google-maps'
     BrowserAnimationsModule,
     MaterialModule,
     YouTubePlayerModule,
-    GoogleMapsModule,
+  
   /* AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAFUaNL3hMGypEXuKqpJWDHWzFJXaceB80'
     })*/
