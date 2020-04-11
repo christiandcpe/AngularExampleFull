@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { MaterialComponent } from './components/material/material.component';
 import { LoginComponent } from './components/login/login.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { YoutubeComponent } from './components/youtube/youtube.component';
 
 
 
@@ -20,6 +22,7 @@ import { LoginComponent } from './components/login/login.component';
     DepositoComponent,
     MaterialComponent,
     LoginComponent,
+    YoutubeComponent,
 
   ],
   imports: [
@@ -28,7 +31,8 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
