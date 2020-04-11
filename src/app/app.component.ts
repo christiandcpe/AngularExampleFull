@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'Taller v2'; 
 promesa = 'Promesa 1'
   mi_nombre = 'Diego Quiroz Ramirez'
-  slogan = 'IEEE UTP SC'
+  slogan = 'PROYECTOS UNFV'
   edad: Number
   /** fin de variables */
   names: any

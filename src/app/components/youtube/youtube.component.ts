@@ -22,15 +22,8 @@ import { Component, OnInit } from '@angular/core';
                       ></youtube-player> 
                   </div>
                 </div>
-            
             </div>
-
         </div>
-  
-  
-  
-  
-  
   `,
   styleUrls: ['./youtube.component.css']
 })
