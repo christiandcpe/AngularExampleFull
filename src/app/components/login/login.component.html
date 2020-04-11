@@ -1,9 +1,9 @@
 <div style="justify-content: center; align-items: center; margin-top: 150px; margin-left: 400px;">
     <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" >
-
         <mat-card class="box">
           <mat-card-header class="mat-card-header">
-            <mat-card-title class="mat-card-title">Inicio de Sesión</mat-card-title>
+            <mat-card-title *ngIf="loginStatus" class="mat-card-title">Inicio de Sesión</mat-card-title>
+            <mat-card-title *ngIf="!loginStatus" class="mat-card-title">Registra tus datos</mat-card-title>
           </mat-card-header >
       
           <form class="example-form">
@@ -18,7 +18,9 @@
             </mat-card-content>
             <button class="btn-block"  (click)="changePass(diablePass)" mat-stroked-button color="accent" >Ver</button>
            
-            <button mat-stroked-button color="accent" (click)="login()" class="btn-block">INGRESAR</button>
+            <button *ngIf="loginStatus" mat-stroked-button color="accent" (click)="login()" class="btn-block">INGRESAR</button>
+            <button *ngIf="loginStatus" mat-stroked-button color="accent" (click)="registrame()" class="btn-block">QUIERO REGISTRARME</button>
+            <button *ngIf="!loginStatus" mat-stroked-button color="accent" (click)="regisrar()" class="btn-block">REGISTRARME</button>
           </form>
         </mat-card>
 
