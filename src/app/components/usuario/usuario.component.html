@@ -1,5 +1,7 @@
 <p>usuario works!</p>
 
+<a [routerLink]="['/deposito']">Go to Deposito Simple</a> <br>
+<a [routerLink]="['/material']">Go to Deposito Angular Material</a>
 
 <p *ngIf="user">
     Parametro de la url: {{parametro}} <br>
@@ -26,8 +28,9 @@
     </div>
 </div>
 
-<button class="btn-block"  (click)="logout()" mat-stroked-button color="accent" >CERRAR SESION</button>
-          
+<button  class="btn-block" (click)="logout()" mat-stroked-button color="accent" >CERRAR SESION</button>
+      
+ 
 <pre>
     <ul *ngFor="let us of usuarios" class="row">
         <li class="col-6">{{us.id}}</li>

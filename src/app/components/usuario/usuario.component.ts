@@ -15,6 +15,7 @@ export class UsuarioComponent implements OnInit {
   color = 'green'
   parametro;
   public user;
+  
 
   constructor(
     private _route: ActivatedRoute,
@@ -27,6 +28,7 @@ export class UsuarioComponent implements OnInit {
       new Usuario(4,'Rubi Esmeralda', 'Mendieta Pisco', 21, 'rubi@gmail.com','fem')
     ]
     console.log(this.usuarios)
+    
    }
 
   ngOnInit() {
@@ -36,14 +38,16 @@ export class UsuarioComponent implements OnInit {
 
     this._route.params.forEach((params: Params) =>{
       this.parametro = params['id']
-      /* this.user = this.usuarios.find(v => v.id == this.parametro)
-      console.log("este es el resultado ",this.user) */
+      this.user = this.usuarios.find(v => v.id == this.parametro)
+      console.log("este es el resultado ",this.user) 
     })
+
     const tokenSession = sessionStorage.getItem('token')
     const token = (localStorage.getItem('token'))
     if(!tokenSession){
       this._router.navigate(['/'])
     }
+   
   }
 
   detallesUser(id){
@@ -68,4 +72,6 @@ export class UsuarioComponent implements OnInit {
     sessionStorage.removeItem('token')
     this._router.navigate(['/'])
   }
+
+
 }

@@ -45,8 +45,10 @@ export class MaterialComponent implements OnInit {
       rows: 2,
       text: "diego"
     })
-    this.edit = false        
-    this.getDepositos()
+    this.edit = false   
+      this.getDepositos()
+  
+    
   }
 /** METODOS DE HTTP  */
     // GET

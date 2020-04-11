@@ -16,7 +16,7 @@
   }
   
   .example-header-image {
-    background-image: url('https://www.e-quipu.pe/dinamic/equipo/232x232/croppedImg_cSHMdA3MsP.png');
+    background-image: url('../../../assets/proyectosunfv.png');
     background-size: cover;
 
   }

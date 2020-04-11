@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DepositoService } from './services/deposito.service'
 import { Deposito } from './models/Deposito'
+import { Router, ActivatedRoute, Params } from '@angular/router'
  
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { Deposito } from './models/Deposito'
 export class AppComponent {
   /** variable */
   title = 'Taller v2'; 
-promesa = 'Promesa 1'
+  promesa = 'Promesa 1'
   mi_nombre = 'Diego Quiroz Ramirez'
   slogan = 'PROYECTOS UNFV'
   edad: Number
@@ -23,14 +24,16 @@ promesa = 'Promesa 1'
   nombres: Array<any> = ['diego','rubi','quiroz', 'mendieta']
   deposito : Array<Deposito>
 
+
   constructor(
-    private _serviceDeposito: DepositoService,  
+    private _serviceDeposito: DepositoService,
+    private _router: Router  
   ){ /** inicializar el valor de las propiedad */
     console.log(this.title)
-    this.age = 12
+    this.age = 26
     this.edad = this.age
    // this.alerta(this.msg)
-    
+ 
   }
 
   alerta(msg){
@@ -41,6 +44,8 @@ promesa = 'Promesa 1'
   cambiarNombre(nombre){
     this.alerta(nombre)
   }
+
+
 
   ngOnInit(){    /** es el primer metodo que se ejecuta dentro del componente */
     /** diferencia entre VAR y LET */
@@ -66,6 +71,8 @@ promesa = 'Promesa 1'
        }
       }
     )
+
+  
   }
 
  
