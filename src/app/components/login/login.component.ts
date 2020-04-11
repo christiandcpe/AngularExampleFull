@@ -114,9 +114,7 @@ export class LoginComponent implements OnInit {
         console.log(err)
       }
     )
-  }
-
-  
+  }  
 
   ngOnInit(): void {    
     const tokenSession = sessionStorage.getItem('token')
